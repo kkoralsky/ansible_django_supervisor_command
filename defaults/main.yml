@@ -1,0 +1,3 @@
+---
+program_name: '{{ app }}_django_manage'
+priority: 9

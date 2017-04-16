@@ -1,0 +1,15 @@
+galaxy_info:
+  author: Karol Ossowski
+  description: django manage.py command run in supervisor
+
+  min_ansible_version: 1.6
+
+  platforms:
+  - name: Debian
+    versions:
+    - all
+
+  galaxy_tags: [ django, debian, supervisor ]
+
+allow_duplicates: yes
+dependencies: [ django_supervisor ]

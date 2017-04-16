@@ -1,0 +1,22 @@
+---
+- name: configure django settings
+  template:
+    src: '{{ django_settings_tpl }}'
+    dest: '{{ django_settings_path }}'
+  when: django_settings_tpl is defined
+
+- name: configure supervisor
+  template:
+    src: '{{ supervisor_conf_tpl }}'
+    dest: '{{ supervisor_config_dir }}/{{ program_name }}.conf'
+  notify: reload app
+  become: true
+  tags: superuser
+  when: supervisor_use_sudo
+
+- name: configure supervisor
+  template:
+    src: '{{ supervisor_conf_tpl }}'
+    dest: '{{ supervisor_config_dir }}/{{ program_name }}.conf'
+  notify: reload app
+  when: not supervisor_use_sudo
