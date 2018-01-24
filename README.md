@@ -22,7 +22,7 @@ Role Variables
 Dependencies
 ------------
 
-- [django_supervisor](http://github.com/xkoralsky/django_supervisor.git)
+- [django_supervisor](http://github.com/kkoralsky/django_supervisor.git)
 
 Example Playbook
 ----------------
